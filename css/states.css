@@ -1,0 +1,82 @@
+// राज्य विवरण डेटा (Modal में दिखाने के लिए)
+const stateDetailsData = {
+    UP: {
+        title: "उत्तर प्रदेश - ऐतिहासिक एवं प्रशासनिक विवरण",
+        capital: "लखनऊ",
+        heritage: "श्री राम जन्मभूमि मंदिर (अयोध्या), काशी विश्वनाथ धाम, ताजमहल",
+        districts: "75 जिले",
+        description: "उत्तर प्रदेश भारत की प्राचीन सभ्यता, संस्कृति और आध्यात्मिक चेतना का प्रमुख केंद्र है। अयोध्या में निर्मित भव्य श्री राम मंदिर भारतीय स्थापत्य कला का अद्वितीय उदाहरण है।"
+    },
+    MP: {
+        title: "मध्य प्रदेश - ऐतिहासिक एवं प्रशासनिक विवरण",
+        capital: "भोपाल",
+        heritage: "खजुराहो मंदिर समूह, सांची स्तूप, महाकालेश्वर (उज्जैन)",
+        districts: "55 जिले",
+        description: "मध्य प्रदेश अपनी समृद्ध ऐतिहासिक धरोहरों, बुंदेलखंड की वीर गाथाओं और प्राकृतिक वन संपदा के लिए जाना जाता है।"
+    },
+    RJ: {
+        title: "राजस्थान - ऐतिहासिक एवं प्रशासनिक विवरण",
+        capital: "जयपुर",
+        heritage: "चित्तौड़गढ़ दुर्ग, हवा महल, कुंभलगढ़, आमेर किला",
+        districts: "50 जिले",
+        description: "राजस्थान अपनी राजपूताना शौर्य परंपरा, भव्य किलों और समृद्ध लोक संस्कृति के लिए विश्व भर में प्रसिद्ध है।"
+    }
+};
+
+// Search Filter Functionality
+const searchInput = document.getElementById("stateSearchInput");
+if (searchInput) {
+    searchInput.addEventListener("input", function () {
+        const query = this.value.toLowerCase().trim();
+        const cards = document.querySelectorAll(".state-card");
+
+        cards.forEach(card => {
+            const keywords = card.getAttribute("data-name").toLowerCase();
+            if (keywords.includes(query)) {
+                card.style.display = "flex";
+            } else {
+                card.style.display = "none";
+            }
+        });
+    });
+}
+
+// Open Modal Function (Global scope के लिए window से जोड़ा गया)
+window.openStateModal = function (code) {
+    const data = stateDetailsData[code];
+    if (!data) return;
+
+    document.getElementById("modalTitle").innerText = data.title;
+    document.getElementById("modalBody").innerHTML = `
+        <p>${data.description}</p>
+        <table class="modal-info-table">
+            <tr>
+                <td>राजधानी:</td>
+                <td>${data.capital}</td>
+            </tr>
+            <tr>
+                <td>कुल जिले:</td>
+                <td>${data.districts}</td>
+            </tr>
+            <tr>
+                <td>प्रमुख धरोहरें:</td>
+                <td>${data.heritage}</td>
+            </tr>
+        </table>
+    `;
+    document.getElementById("stateModal").style.display = "flex";
+};
+
+// Close Modal Function
+window.closeStateModal = function () {
+    document.getElementById("stateModal").style.display = "none";
+};
+
+// Modal के बाहर क्लिक करने पर बंद करें
+window.addEventListener("click", function (e) {
+    const modal = document.getElementById("stateModal");
+    if (e.target === modal) {
+        modal.style.display = "none";
+    }
+});
+  
