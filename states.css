@@ -1,0 +1,304 @@
+/* =====================================
+   STATES / VILLAGE PAGE SPECIFIC CSS
+   ===================================== */
+
+/* Page Header with Search */
+.page-header {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    padding: 26px 30px;
+    border-radius: 12px;
+    border-left: 6px solid #0f294a;
+    border-top: 1px solid #e2e8f0;
+    border-right: 1px solid #e2e8f0;
+    border-bottom: 1px solid #e2e8f0;
+    box-shadow: 0 4px 15px rgba(15, 41, 74, 0.05);
+    margin-bottom: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.page-header h1 {
+    font-size: 1.65rem;
+    color: #0f294a;
+    margin-bottom: 6px;
+}
+
+.page-header p {
+    color: #475569;
+    font-size: 0.95rem;
+}
+
+/* Search Box Styling */
+.search-box {
+    position: relative;
+    min-width: 280px;
+}
+
+.search-box i {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #64748b;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 11px 15px 11px 40px;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    color: #1e293b;
+    background-color: #ffffff;
+    transition: all 0.25s ease;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: #0f294a;
+    box-shadow: 0 0 0 3px rgba(15, 41, 74, 0.1);
+}
+
+/* Cards Grid */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+    gap: 26px;
+}
+
+/* Official Light State Card */
+.state-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 26px;
+    position: relative;
+    box-shadow: 0 4px 14px rgba(15, 41, 74, 0.05);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.state-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 26px rgba(15, 41, 74, 0.12);
+    border-color: #cbd5e1;
+}
+
+/* Featured UP Card Top Border */
+.featured-up {
+    border-top: 4px solid #ea580c;
+    background: linear-gradient(180deg, #fffaf5 0%, #ffffff 35%);
+}
+
+.card-top-ribbon {
+    display: inline-block;
+    align-self: flex-start;
+    font-size: 0.74rem;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 6px;
+    margin-bottom: 16px;
+}
+
+.saffron-ribbon {
+    background-color: #ffedd5;
+    color: #c2410c;
+    border: 1px solid #fed7aa;
+}
+
+.navy-ribbon {
+    background-color: #dbeafe;
+    color: #1e40af;
+    border: 1px solid #bfdbfe;
+}
+
+.green-ribbon {
+    background-color: #dcfce7;
+    color: #166534;
+    border: 1px solid #bbf7d0;
+}
+
+/* Card Header with Icon */
+.card-header-flex {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 14px;
+}
+
+.icon-badge {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    flex-shrink: 0;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.saffron-badge {
+    background-color: #fff7ed;
+    color: #ea580c;
+    border: 1px solid #fdba74;
+}
+
+.navy-badge {
+    background-color: #eff6ff;
+    color: #1d4ed8;
+    border: 1px solid #93c5fd;
+}
+
+.green-badge {
+    background-color: #f0fdf4;
+    color: #15803d;
+    border: 1px solid #86efac;
+}
+
+.temple-svg {
+    width: 40px;
+    height: 40px;
+}
+
+.state-code {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.state-card h2 {
+    font-size: 1.35rem;
+    color: #0f294a;
+}
+
+.tagline {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #1d4ed8;
+    margin-bottom: 10px;
+}
+
+.description {
+    font-size: 0.92rem;
+    color: #475569;
+    line-height: 1.65;
+    margin-bottom: 22px;
+    flex: 1;
+}
+
+/* Card Footer Metadata */
+.card-meta {
+    border-top: 1px solid #e2e8f0;
+    padding-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.82rem;
+    color: #64748b;
+}
+
+.details-btn {
+    background: none;
+    border: none;
+    color: #0f294a;
+    font-weight: 700;
+    font-size: 0.85rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 10px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.details-btn:hover {
+    background-color: #f1f5f9;
+    color: #ea580c;
+}
+
+/* Official Govt Modal Styling */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(4px);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.modal-box {
+    background: #ffffff;
+    max-width: 550px;
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    animation: modalFadeIn 0.25s ease;
+}
+
+@keyframes modalFadeIn {
+    from { opacity: 0; transform: translateY(-15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.modal-header {
+    background: #0f294a;
+    color: #ffffff;
+    padding: 18px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid #ea580c;
+}
+
+.close-modal {
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+.modal-body {
+    padding: 24px;
+    color: #334155;
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+
+.modal-info-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 5px;
+}
+
+.modal-info-table td {
+    padding: 10px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.modal-info-table td:first-child {
+    font-weight: 600;
+    color: #0f294a;
+    width: 38%;
+}
+
+@media (max-width: 768px) {
+    .search-box {
+        width: 100%;
+    }
+}
