@@ -59,37 +59,285 @@
                 <h1><i class="fa-solid fa-map-location-dot"></i> भारत के सभी 28 राज्यों की पहचान</h1>
                 <p>देश के समस्त 28 राज्यों की गौरवशाली विरासत, स्थापत्य कला और सांस्कृतिक धरोहर की जानकारी</p>
             </div>
-            <!-- Search Box (केवल सर्च बार रहेगा) -->
+            <!-- Search Box -->
             <div class="search-box">
                 <i class="fa-solid fa-magnifying-glass"></i>
-                <input type="text" id="stateSearchInput" placeholder="राज्य, राजधानी या धरोहर खोजें...">
+                <input type="text" id="stateSearchInput" placeholder="राज्य या राजधानी खोजें...">
             </div>
         </div>
 
-        <!-- States & Heritage Cards Grid (JS द्वारा सभी 28 कार्ड्स यहाँ लोड होंगे) -->
-        <div class="cards-grid" id="statesGrid"></div>
-    </main>
+        <!-- States & Heritage Cards Grid (सभी 28 राज्यों के कार्ड्स सीधे यहाँ हैं) -->
+        <div class="cards-grid" id="statesGrid">
 
-    <!-- State Details Modal -->
-    <div id="stateModal" class="modal-overlay">
-        <div class="modal-box">
-            <div class="modal-header">
-                <h3 id="modalTitle">राज्य विवरण</h3>
-                <button class="close-modal" onclick="closeStateModal()"><i class="fa-solid fa-xmark"></i></button>
+            <!-- 1. Uttar Pradesh -->
+            <div class="state-card featured-up" data-name="उत्तर प्रदेश uttar pradesh ayodhya ram mandir lucknow">
+                <div class="card-top-ribbon saffron-ribbon">प्रमुख सांस्कृतिक धरोहर</div>
+                <div class="card-header-flex">
+                    <div class="icon-badge saffron-badge" title="श्री राम मंदिर वास्तुकला प्रतीक">
+                        <svg class="temple-svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <path d="M32 4V14M32 5L42 8L32 11" stroke="#ea580c" stroke-width="2.5"/>
+                            <path d="M22 28L32 14L42 28H22Z" fill="rgba(234, 88, 12, 0.15)"/>
+                            <path d="M12 36L18 26L24 36H12Z"/>
+                            <path d="M40 36L46 26L52 36H40Z"/>
+                            <rect x="10" y="36" width="44" height="14" rx="1"/>
+                            <path d="M27 50V41H37V50"/>
+                            <path d="M6 50H58M4 55H60"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="state-code">UP</span>
+                        <h2>उत्तर प्रदेश</h2>
+                    </div>
+                </div>
+                <p class="tagline">मर्यादा, अध्यात्म और ऐतिहासिक विरासत</p>
+                <p class="description">अयोध्या का भव्य श्री राम जन्मभूमि मंदिर, काशी विश्वनाथ धाम, प्रयागराज संगम और ताजमहल इस राज्य की पहचान हैं।</p>
+                <div class="card-meta">
+                    <span><i class="fa-solid fa-location-dot"></i> राजधानी: लखनऊ</span>
+                    <button class="details-btn" onclick="openModal('उत्तर प्रदेश', 'लखनऊ', '75 जिले', 'श्री राम जन्मभूमि मंदिर, काशी विश्वनाथ, ताजमहल', 'अयोध्या, वाराणसी, लखनऊ')">विवरण <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
             </div>
-            <div class="modal-body" id="modalBody"></div>
-        </div>
-    </div>
 
-    <!-- Official Govt Style Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <p>© 2026 <strong>भारत जन सूचना पोर्टल</strong> | नागरिक सूचना एवं पारदर्शिता पहल</p>
-            <p class="footer-sub">इस पोर्टल की सामग्री जन-जागरूकता एवं सूचना प्रसार हेतु प्रकाशित की गई है।</p>
-        </div>
-    </footer>
+            <!-- 2. Madhya Pradesh -->
+            <div class="state-card" data-name="मध्य प्रदेश madhya pradesh bhopal khajuraho ujjain">
+                <div class="card-top-ribbon navy-ribbon">भारत का हृदय प्रदेश</div>
+                <div class="card-header-flex">
+                    <div class="icon-badge navy-badge"><i class="fa-solid fa-gopuram"></i></div>
+                    <div>
+                        <span class="state-code">MP</span>
+                        <h2>मध्य प्रदेश</h2>
+                    </div>
+                </div>
+                <p class="tagline">प्राचीन स्थापत्य कला और वन्यजीव धरोहर</p>
+                <p class="description">खजुराहो के मंदिर, सांची का महान स्तूप, उज्जैन का महाकाल लोक और भीमबेटका की गुफाएँ यहाँ स्थित हैं।</p>
+                <div class="card-meta">
+                    <span><i class="fa-solid fa-location-dot"></i> राजधानी: भोपाल</span>
+                    <button class="details-btn" onclick="openModal('मध्य प्रदेश', 'भोपाल', '55 जिले', 'खजुराहो मंदिर, सांची स्तूप, महाकाल लोक', 'खजुराहो, भोपाल, उज्जैन')">विवरण <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </div>
 
-    <!-- All 28 States JS -->
-    <script type="module" src="js/states.js"></script>
-</body>
-</html>
+            <!-- 3. Rajasthan -->
+            <div class="state-card" data-name="राजस्थान rajasthan jaipur hawa mahal">
+                <div class="card-top-ribbon green-ribbon">शौर्य एवं स्थापत्य</div>
+                <div class="card-header-flex">
+                    <div class="icon-badge green-badge"><i class="fa-solid fa-chess-rook"></i></div>
+                    <div>
+                        <span class="state-code">RJ</span>
+                        <h2>राजस्थान</h2>
+                    </div>
+                </div>
+                <p class="tagline">वीरता, दुर्गों और समृद्ध लोक कला</p>
+                <p class="description">चित्तौड़गढ़ और कुंभलगढ़ के ऐतिहासिक दुर्ग, जयपुर का हवा महल और अरावली की संस्कृति यहाँ की शान है।</p>
+                <div class="card-meta">
+                    <span><i class="fa-solid fa-location-dot"></i> राजधानी: जयपुर</span>
+                    <button class="details-btn" onclick="openModal('राजस्थान', 'जयपुर', '50 जिले', 'चित्तौड़गढ़ दुर्ग, हवा महल, आमेर किला', 'जयपुर, उदयपुर, जोधपुर')">विवरण <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </div>
+
+            <!-- 4. Maharashtra -->
+            <div class="state-card" data-name="महाराष्ट्र maharashtra mumbai pune">
+                <div class="card-top-ribbon saffron-ribbon">स्वराज्य की भूमि</div>
+                <div class="card-header-flex">
+                    <div class="icon-badge saffron-badge"><i class="fa-solid fa-fort-awesome"></i></div>
+                    <div>
+                        <span class="state-code">MH</span>
+                        <h2>महाराष्ट्र</h2>
+                    </div>
+                </div>
+                <p class="tagline">छत्रपति शिवाजी महाराज की वीर भूमि</p>
+                <p class="description">रायगढ़ दुर्ग, अजंता-एलोरा की गुफाएँ और गेटवे ऑफ इंडिया यहाँ की ऐतिहासिक धरोहरें हैं।</p>
+                <div class="card-meta">
+                    <span><i class="fa-solid fa-location-dot"></i> राजधानी: मुंबई</span>
+                    <button class="details-btn" onclick="openModal('महाराष्ट्र', 'मुंबई', '36 जिले', 'अजंता-एलोरा गुफाएँ, रायगढ़ किला', 'मुंबई, पुणे, नागपुर')">विवरण <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </div>
+
+            <!-- 5. Gujarat -->
+            <div class="state-card" data-name="गुजरात gujarat gandhinagar somnath statue of unity">
+                <div class="card-top-ribbon navy-ribbon">एकता एवं विरासत</div>
+                <div class="card-header-flex">
+                    <div class="icon-badge navy-badge"><i class="fa-solid fa-monument"></i></div>
+                    <div>
+                        <span class="state-code">GJ</span>
+                        <h2>गुजरात</h2>
+                    </div>
+                </div>
+                <p class="tagline">स्टैच्यू ऑफ यूनिटी और सोमनाथ</p>
+                <p class="description">विश्व की सबसे ऊँची प्रतिमा स्टैच्यू ऑफ यूनिटी और प्रथम ज्योतिर्लिंग सोमनाथ मंदिर यहाँ स्थित हैं।</p>
+                <div class="card-meta">
+                    <span><i class="fa-solid fa-location-dot"></i> राजधानी: गांधीनगर</span>
+                    <button class="details-btn" onclick="openModal('गुजरात', 'गांधीनगर', '33 जिले', 'स्टैच्यू ऑफ यूनिटी, सोमनाथ मंदिर, धोलावीरा', 'अहमदाबाद, सोमनाथ, वडोदरा')">विवरण <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </div>
+
+            <!-- 6. Bihar -->
+            <div class="state-card" data-name="बिहार bihar patna nalanda bodhgaya">
+                <div class="card-top-ribbon green-ribbon">ज्ञान एवं इतिहास</div>
+                <div class="card-header-flex">
+                    <div class="icon-badge green-badge"><i class="fa-solid fa-dharmachakra"></i></div>
+                    <div>
+                        <span class="state-code">BR</span>
+                        <h2>बिहार</h2>
+                    </div>
+                </div>
+                <p class="tagline">प्राचीन नालंदा और बौद्ध विरासत</p>
+                <p class="description">नालंदा विश्वविद्यालय के अवशेष और बोधगया का महाबोधि मंदिर बिहार के स्वर्णिम इतिहास के साक्षी हैं।</p>
+                <div class="card-meta">
+                    <span><i class="fa-solid fa-location-dot"></i> राजधानी: पटना</span>
+                    <button class="details-btn" onclick="openModal('बिहार', 'पटना', '38 जिले', 'नालंदा विश्वविद्यालय, महाबोधि मंदिर (बोधगया)', 'पटना, बोधगया, राजगीर')">विवरण <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </div>
+
+            <!-- 7. Uttarakhand -->
+            <div class="state-card" data-name="उत्तराखंड uttarakhand dehradun kedarnath badrinath">
+                <div class="card-top-ribbon saffron-ribbon">देवभूमि</div>
+                <div class="card-header-flex">
+                    <div class="icon-badge saffron-badge"><i class="fa-solid fa-mountain"></i></div>
+                    <div>
+                        <span class="state-code">UK</span>
+                        <h2>उत्तराखंड</h2>
+                    </div>
+                </div>
+                <p class="tagline">चार धाम और हिमालयी आध्यात्मिक केंद्र</p>
+                <p class="description">केदारनाथ, बद्रीनाथ और हरिद्वार-ऋषिकेश की पावन भूमि उत्तराखंड को देवभूमि बनाती है।</p>
+                <div class="card-meta">
+                    <span><i class="fa-solid fa-location-dot"></i> राजधानी: देहरादून</span>
+                    <button class="details-btn" onclick="openModal('उत्तराखंड', 'देहरादून', '13 जिले', 'केदारनाथ, बद्रीनाथ, हर की पौड़ी', 'हरिद्वार, केदारनाथ, ऋषिकेश')">विवरण <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </div>
+
+            <!-- 8. Himachal Pradesh -->
+            <div class="state-card" data-name="हिमाचल प्रदेश himachal pradesh shimla">
+                <div class="card-top-ribbon navy-ribbon">हिमालय का आंचल</div>
+                <div class="card-header-flex">
+                    <div class="icon-badge navy-badge"><i class="fa-solid fa-snowflake"></i></div>
+                    <div>
+                        <span class="state-code">HP</span>
+                        <h2>हिमाचल प्रदेश</h2>
+                    </div>
+                </div>
+                <p class="tagline">प्राकृतिक सौंदर्य और प्राचीन मंदिर</p>
+                <p class="description">शिमला, कुल्लू-मनाली और कांगड़ा किला हिमाचल की सांस्कृतिक और प्राकृतिक विरासत हैं।</p>
+                <div class="card-meta">
+                    <span><i class="fa-solid fa-location-dot"></i> राजधानी: शिमला</span>
+                    <button class="details-btn" onclick="openModal('हिमाचल प्रदेश', 'शिमला', '12 जिले', 'कांगड़ा दुर्ग, हडिम्बा मंदिर', 'शिमला, मनाली, धर्मशाला')">विवरण <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </div>
+
+            <!-- 9. Punjab -->
+            <div class="state-card" data-name="पंजाब punjab chandigarh amritsar golden temple">
+                <div class="card-top-ribbon saffron-ribbon">पांच नदियों की भूमि</div>
+                <div class="card-header-flex">
+                    <div class="icon-badge saffron-badge"><i class="fa-solid fa-sun"></i></div>
+                    <div>
+                        <span class="state-code">PB</span>
+                        <h2>पंजाब</h2>
+                    </div>
+                </div>
+                <p class="tagline">स्वर्ण मंदिर और बलिदान की धरती</p>
+                <p class="description">अमृतसर का पावन श्री हरमंदिर साहिब और जलियांवाला बाग पंजाब की आध्यात्मिक पहचान हैं।</p>
+                <div class="card-meta">
+                    <span><i class="fa-solid fa-location-dot"></i> राजधानी: चंडीगढ़</span>
+                    <button class="details-btn" onclick="openModal('पंजाब', 'चंडीगढ़', '23 जिले', 'श्री हरमंदिर साहिब, जलियांवाला बाग', 'अमृतसर, लुधियाना, पटियाला')">विवरण <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </div>
+
+            <!-- 10. Haryana -->
+            <div class="state-card" data-name="हरियाणा haryana chandigarh kurukshetra">
+                <div class="card-top-ribbon green-ribbon">गीता उपदेश भूमि</div>
+                <div class="card-header-flex">
+                    <div class="icon-badge green-badge"><i class="fa-solid fa-shield-halved"></i></div>
+                    <div>
+                        <span class="state-code">HR</span>
+                        <h2>हरियाणा</h2>
+                    </div>
+                </div>
+                <p class="tagline">धर्मक्षेत्र कुरुक्षेत्र और खेल शक्ति</p>
+                <p class="description">महाभारत युद्ध और भगवद्गीता के उपदेश की पावन भूमि कुरुक्षेत्र हरियाणा की पहचान है।</p>
+                <div class="card-meta">
+                    <span><i class="fa-solid fa-location-dot"></i> राजधानी: चंडीगढ़</span>
+                    <button class="details-btn" onclick="openModal('हरियाणा', 'चंडीगढ़', '22 जिले', 'ब्रह्मसरोवर कुरुक्षेत्र, पानीपत संग्रहालय', 'कुरुक्षेत्र, पानीपत, गुरुग्राम')">विवरण <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </div>
+
+            <!-- 11. Chhattisgarh -->
+            <div class="state-card" data-name="छत्तीसगढ़ chhattisgarh raipur">
+                <div class="card-top-ribbon green-ribbon">धान का कटोरा</div>
+                <div class="card-header-flex">
+                    <div class="icon-badge green-badge"><i class="fa-solid fa-tree"></i></div>
+                    <div>
+                        <span class="state-code">CG</span>
+                        <h2>छत्तीसगढ़</h2>
+                    </div>
+                </div>
+                <p class="tagline">जनजातीय कला और चित्रकूट जलप्रपात</p>
+                <p class="description">बस्तर की जनजातीय संस्कृति, भोरमदेव मंदिर और चित्रकूट जलप्रपात यहाँ की पहचान हैं।</p>
+                <div class="card-meta">
+                    <span><i class="fa-solid fa-location-dot"></i> राजधानी: रायपुर</span>
+                    <button class="details-btn" onclick="openModal('छत्तीसगढ़', 'रायपुर', '33 जिले', 'भोरमदेव मंदिर, चित्रकूट जलप्रपात', 'रायपुर, बस्तर, बिलासपुर')">विवरण <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </div>
+
+            <!-- 12. Jharkhand -->
+            <div class="state-card" data-name="झारखंड jharkhand ranchi deoghar">
+                <div class="card-top-ribbon navy-ribbon">वन एवं खनिज प्रदेश</div>
+                <div class="card-header-flex">
+                    <div class="icon-badge navy-badge"><i class="fa-solid fa-leaf"></i></div>
+                    <div>
+                        <span class="state-code">JH</span>
+                        <h2>झारखंड</h2>
+                    </div>
+                </div>
+                <p class="tagline">बाबा बैद्यनाथ धाम और पारसनाथ</p>
+                <p class="description">देवघर स्थित ज्योतिर्लिंग बाबा बैद्यनाथ धाम और जैन तीर्थ सम्मेद शिखरजी यहाँ के प्रमुख केंद्र हैं।</p>
+                <div class="card-meta">
+                    <span><i class="fa-solid fa-location-dot"></i> राजधानी: रांची</span>
+                    <button class="details-btn" onclick="openModal('झारखंड', 'रांची', '24 जिले', 'बाबा बैद्यनाथ मंदिर, पारसनाथ पहाड़ी', 'रांची, देवघर, जमशेदपुर')">विवरण <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </div>
+
+            <!-- 13. West Bengal -->
+            <div class="state-card" data-name="पश्चिम बंगाल west bengal kolkata howrah bridge">
+                <div class="card-top-ribbon saffron-ribbon">साहित्य एवं कला</div>
+                <div class="card-header-flex">
+                    <div class="icon-badge saffron-badge"><i class="fa-solid fa-bridge"></i></div>
+                    <div>
+                        <span class="state-code">WB</span>
+                        <h2>पश्चिम बंगाल</h2>
+                    </div>
+                </div>
+                <p class="tagline">हावड़ा ब्रिज और दुर्गा पूजा विरासत</p>
+                <p class="description">कोलकाता का विक्टोरिया मेमोरियल, हावड़ा ब्रिज और शांतिनिकेतन यहाँ की सांस्कृतिक धरोहर हैं।</p>
+                <div class="card-meta">
+                    <span><i class="fa-solid fa-location-dot"></i> राजधानी: कोलकाता</span>
+                    <button class="details-btn" onclick="openModal('पश्चिम बंगाल', 'कोलकाता', '23 जिले', 'विक्टोरिया मेमोरियल, शांतिनिकेतन', 'कोलकाता, दार्जिलिंग')">विवरण <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </div>
+
+            <!-- 14. Odisha -->
+            <div class="state-card" data-name="ओडिशा odisha bhubaneswar puri jagannath">
+                <div class="card-top-ribbon saffron-ribbon">उत्कल कला भूमि</div>
+                <div class="card-header-flex">
+                    <div class="icon-badge saffron-badge"><i class="fa-solid fa-dharmachakra"></i></div>
+                    <div>
+                        <span class="state-code">OD</span>
+                        <h2>ओडिशा</h2>
+                    </div>
+                </div>
+                <p class="tagline">जगन्नाथ पुरी और कोणार्क सूर्य मंदिर</p>
+                <p class="description">पुरी का श्री जगन्नाथ मंदिर और कोणार्क का सूर्य मंदिर ओडिशा की अद्भुत स्थापत्य कला के प्रमाण हैं।</p>
+                <div class="card-meta">
+                    <span><i class="fa-solid fa-location-dot"></i> राजधानी: भुवनेश्वर</span>
+                    <button class="details-btn" onclick="openModal('ओडिशा', 'भुवनेश्वर', '30 जिले', 'श्री जगन्नाथ मंदिर पुरी, कोणार्क सूर्य मंदिर', 'भुवनेश्वर, पुरी, कोणार्क')">विवरण <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </div>
+
+            <!-- 15. Tamil Nadu -->
+            <div class="state-card" data-name="तमिलनाडु tamil nadu chennai madurai rameshwaram">
+                <div class="card-top-ribbon navy-ribbon">मंदिरों की भूमि</div>
+                <div class="card-header-flex">
+                    <div class="icon-badge navy-badge"><i class="fa-solid fa-gopuram"></i></div>
+                    <div>
+                        <span class="state-code">TN</span>
+                        <h2>तमिलनाडु</h2>
+                    </div>
+                    </div>
