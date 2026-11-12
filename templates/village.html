@@ -4,12 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>राज्य एवं ग्राम पहचान - भारत जन सूचना पोर्टल</title>
-    <!-- Google Fonts (Hindi + English Clean Font) -->
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Custom Light Govt CSS -->
+    
+    <!-- कॉमन स्टाइल फ़ाइल (Navbar, Footer और Global Reset के लिए) -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- इस पेज की अपनी अलग CSS फ़ाइल -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/village.css') }}">
 </head>
 <body>
 
@@ -67,17 +70,12 @@
                     <div class="icon-badge saffron-badge" title="श्री राम मंदिर वास्तुकला प्रतीक">
                         <!-- श्री राम मंदिर शिखर का छोटा SVG डिज़ाइन -->
                         <svg class="temple-svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5">
-                            <!-- ध्वज -->
                             <path d="M32 4V14M32 5L42 8L32 11" stroke="#ea580c" stroke-width="2.5"/>
-                            <!-- मुख्य शिखर -->
                             <path d="M22 28L32 14L42 28H22Z" fill="rgba(234, 88, 12, 0.15)"/>
-                            <!-- सहायक गुंबद -->
                             <path d="M12 36L18 26L24 36H12Z"/>
                             <path d="M40 36L46 26L52 36H40Z"/>
-                            <!-- मंदिर आधार व स्तंभ -->
                             <rect x="10" y="36" width="44" height="14" rx="1"/>
                             <path d="M27 50V41H37V50"/>
-                            <!-- सीढ़ियाँ -->
                             <path d="M6 50H58M4 55H60"/>
                         </svg>
                     </div>
