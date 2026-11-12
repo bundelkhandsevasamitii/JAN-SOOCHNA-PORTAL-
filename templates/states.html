@@ -9,10 +9,9 @@
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- कॉमन स्टाइल फ़ाइल (Navbar, Footer और Global Reset के लिए) -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <!-- इस पेज की अपनी अलग CSS फ़ाइल -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/states.css') }}">
+    <!-- GitHub Pages के लिए डायरेक्ट CSS पाथ -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/states.css">
 </head>
 <body>
 
@@ -36,39 +35,45 @@
             </div>
         </div>
         <nav class="nav-links">
-            <a href="/">होम</a>
-            <a href="/village" class="active">राज्य/गाँव</a>
-            <a href="/schemes">योजनाएं</a>
-            <a href="/budget">बजट</a>
-            <a href="/notices">सूचनाएं</a>
-            <a href="/complaints">शिकायत</a>
-            <a href="/reports">रिपोर्ट्स</a>
+            <a href="index.html">होम</a>
+            <a href="village.html" class="active">राज्य/गाँव</a>
+            <a href="schemes.html">योजनाएं</a>
+            <a href="budget.html">बजट</a>
+            <a href="notices.html">सूचनाएं</a>
+            <a href="complaints.html">शिकायत</a>
+            <a href="reports.html">रिपोर्ट्स</a>
         </nav>
     </header>
 
     <!-- Breadcrumb Bar -->
     <div class="breadcrumb-bar">
         <div class="breadcrumb-container">
-            <a href="/"><i class="fa-solid fa-house"></i> मुख्य पृष्ठ</a> &nbsp;/&nbsp; <span>राज्य एवं ऐतिहासिक पहचान</span>
+            <a href="index.html"><i class="fa-solid fa-house"></i> मुख्य पृष्ठ</a> &nbsp;/&nbsp; <span>राज्य एवं ऐतिहासिक पहचान</span>
         </div>
     </div>
 
     <!-- Main Container -->
     <main class="container">
         <div class="page-header">
-            <h1><i class="fa-solid fa-map-location-dot"></i> राज्यों की ऐतिहासिक एवं सांस्कृतिक पहचान</h1>
-            <p>देश के प्रमुख राज्यों की गौरवशाली विरासत, स्थापत्य कला और सांस्कृतिक धरोहर की जानकारी</p>
+            <div class="header-text">
+                <h1><i class="fa-solid fa-map-location-dot"></i> राज्यों की ऐतिहासिक एवं सांस्कृतिक पहचान</h1>
+                <p>देश के प्रमुख राज्यों की गौरवशाली विरासत, स्थापत्य कला और सांस्कृतिक धरोहर की जानकारी</p>
+            </div>
+            <!-- Search Box -->
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="stateSearchInput" placeholder="राज्य या ऐतिहासिक स्थल खोजें...">
+            </div>
         </div>
 
         <!-- States & Heritage Cards Grid -->
-        <div class="cards-grid">
+        <div class="cards-grid" id="statesGrid">
 
             <!-- Card 1: Uttar Pradesh (Ram Mandir Custom SVG Design) -->
-            <div class="state-card featured-up">
+            <div class="state-card featured-up" data-name="उत्तर प्रदेश uttar pradesh ayodhya ram mandir varanasi">
                 <div class="card-top-ribbon saffron-ribbon">प्रमुख सांस्कृतिक धरोहर</div>
                 <div class="card-header-flex">
                     <div class="icon-badge saffron-badge" title="श्री राम मंदिर वास्तुकला प्रतीक">
-                        <!-- श्री राम मंदिर शिखर का छोटा SVG डिज़ाइन -->
                         <svg class="temple-svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5">
                             <path d="M32 4V14M32 5L42 8L32 11" stroke="#ea580c" stroke-width="2.5"/>
                             <path d="M22 28L32 14L42 28H22Z" fill="rgba(234, 88, 12, 0.15)"/>
@@ -89,13 +94,13 @@
                     अयोध्या का भव्य <strong>श्री राम जन्मभूमि मंदिर</strong>, काशी विश्वनाथ धाम, प्रयागराज संगम और आगरा का ताजमहल इस राज्य की विश्व प्रसिद्ध ऐतिहासिक व सांस्कृतिक पहचान हैं।
                 </p>
                 <div class="card-meta">
-                    <span><i class="fa-solid fa-location-dot"></i> प्रमुख केंद्र: अयोध्या, वाराणसी, लखनऊ</span>
-                    <a href="#" class="details-link">विवरण देखें <i class="fa-solid fa-arrow-right"></i></a>
+                    <span><i class="fa-solid fa-location-dot"></i> अयोध्या, वाराणसी, लखनऊ</span>
+                    <button class="details-btn" onclick="openStateModal('UP')">विवरण देखें <i class="fa-solid fa-arrow-right"></i></button>
                 </div>
             </div>
 
             <!-- Card 2: Madhya Pradesh -->
-            <div class="state-card">
+            <div class="state-card" data-name="मध्य प्रदेश madhya pradesh khajuraho bhopal ujjain chhatarpur">
                 <div class="card-top-ribbon navy-ribbon">भारत का हृदय प्रदेश</div>
                 <div class="card-header-flex">
                     <div class="icon-badge navy-badge">
@@ -111,13 +116,13 @@
                     विश्व धरोहर खजुराहो के मंदिर, सांची का महान स्तूप, उज्जैन का महाकालेश्वर लोक और भीमबेटका की गुफाएँ मध्य प्रदेश के गौरवशाली इतिहास को दर्शाती हैं।
                 </p>
                 <div class="card-meta">
-                    <span><i class="fa-solid fa-location-dot"></i> प्रमुख केंद्र: खजुराहो, भोपाल, उज्जैन</span>
-                    <a href="#" class="details-link">विवरण देखें <i class="fa-solid fa-arrow-right"></i></a>
+                    <span><i class="fa-solid fa-location-dot"></i> खजुराहो, भोपाल, उज्जैन</span>
+                    <button class="details-btn" onclick="openStateModal('MP')">विवरण देखें <i class="fa-solid fa-arrow-right"></i></button>
                 </div>
             </div>
 
             <!-- Card 3: Rajasthan -->
-            <div class="state-card">
+            <div class="state-card" data-name="राजस्थान rajasthan jaipur udaipur chittorgarh">
                 <div class="card-top-ribbon green-ribbon">शौर्य एवं स्थापत्य</div>
                 <div class="card-header-flex">
                     <div class="icon-badge green-badge">
@@ -133,13 +138,26 @@
                     चित्तौड़गढ़ और कुंभलगढ़ के ऐतिहासिक दुर्ग, जयपुर का हवा महल और अरावली की वादियों में बसी संस्कृति राजस्थान को अद्वितीय पहचान देती है।
                 </p>
                 <div class="card-meta">
-                    <span><i class="fa-solid fa-location-dot"></i> प्रमुख केंद्र: जयपुर, उदयपुर, चित्तौड़गढ़</span>
-                    <a href="#" class="details-link">विवरण देखें <i class="fa-solid fa-arrow-right"></i></a>
+                    <span><i class="fa-solid fa-location-dot"></i> जयपुर, उदयपुर, चित्तौड़गढ़</span>
+                    <button class="details-btn" onclick="openStateModal('RJ')">विवरण देखें <i class="fa-solid fa-arrow-right"></i></button>
                 </div>
             </div>
 
         </div>
     </main>
+
+    <!-- State Details Modal (विवरण देखने के लिए पॉप-अप) -->
+    <div id="stateModal" class="modal-overlay">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h3 id="modalTitle">राज्य विवरण</h3>
+                <button class="close-modal" onclick="closeStateModal()"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- JavaScript द्वारा विवरण यहाँ लोड होगा -->
+            </div>
+        </div>
+    </div>
 
     <!-- Official Govt Style Footer -->
     <footer class="footer">
@@ -149,5 +167,7 @@
         </div>
     </footer>
 
+    <!-- Firebase & Page Script -->
+    <script type="module" src="js/states.js"></script>
 </body>
 </html>
