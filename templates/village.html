@@ -3,99 +3,153 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ग्राम एवं राज्य पहचान - भारत जन सूचना पोर्टल</title>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>राज्य एवं ग्राम पहचान - भारत जन सूचना पोर्टल</title>
+    <!-- Google Fonts (Hindi + English Clean Font) -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Custom CSS -->
+    <!-- Custom Light Govt CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
-<body class="dark-theme">
+<body>
 
-    <!-- Navbar -->
+    <!-- Top Govt Accessibility & Info Strip -->
+    <div class="gov-top-strip">
+        <div class="strip-content">
+            <span><i class="fa-solid fa-building-columns"></i> भारत जन सूचना पोर्टल | नागरिक सेवा मंच</span>
+            <span>मुख्य सामग्री पर जाएं | हिंदी / English</span>
+        </div>
+    </div>
+
+    <!-- Main Official Header & Navbar -->
     <header class="navbar">
-        <div class="logo">
-            <i class="fa-solid fa-landmark"></i> <span>जन सूचना पोर्टल</span>
+        <div class="logo-section">
+            <div class="emblem-box">
+                <i class="fa-solid fa-landmark"></i>
+            </div>
+            <div>
+                <h2 class="portal-title">भारत जन सूचना पोर्टल</h2>
+                <p class="portal-subtitle">पारदर्शी शासन • सशक्त नागरिक</p>
+            </div>
         </div>
         <nav class="nav-links">
             <a href="/">होम</a>
-            <a href="/village" class="active">गाँव/राज्य</a>
+            <a href="/village" class="active">राज्य/गाँव</a>
             <a href="/schemes">योजनाएं</a>
             <a href="/budget">बजट</a>
-            <a href="/notices">नोटिस</a>
+            <a href="/notices">सूचनाएं</a>
             <a href="/complaints">शिकायत</a>
             <a href="/reports">रिपोर्ट्स</a>
         </nav>
     </header>
 
+    <!-- Breadcrumb Bar -->
+    <div class="breadcrumb-bar">
+        <div class="breadcrumb-container">
+            <a href="/"><i class="fa-solid fa-house"></i> मुख्य पृष्ठ</a> &nbsp;/&nbsp; <span>राज्य एवं ऐतिहासिक पहचान</span>
+        </div>
+    </div>
+
     <!-- Main Container -->
     <main class="container">
         <div class="page-header">
-            <h1><i class="fa-solid fa-map-location-dot"></i> राज्य एवं ऐतिहासिक पहचान</h1>
-            <p>भारत के विभिन्न राज्यों की सांस्कृतिक विरासत, धरोहर और ऐतिहासिक स्थलों की झलक</p>
+            <h1><i class="fa-solid fa-map-location-dot"></i> राज्यों की ऐतिहासिक एवं सांस्कृतिक पहचान</h1>
+            <p>देश के प्रमुख राज्यों की गौरवशाली विरासत, स्थापत्य कला और सांस्कृतिक धरोहर की जानकारी</p>
         </div>
 
-        <!-- States & Heritage Grid -->
+        <!-- States & Heritage Cards Grid -->
         <div class="cards-grid">
 
-            <!-- Card 1: Uttar Pradesh (Ram Mandir & Heritage Theme) -->
-            <div class="state-card featured-card">
-                <div class="card-badge">विशेष धरोहर</div>
-                <div class="card-icon-container ram-mandir-glow">
-                    <!-- राम मंदिर / वास्तुकला को दर्शाने वाला आइकॉन या छोटा SVG प्रतीक -->
-                    <svg class="custom-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6M12 3v4M10 10h4M10 13h4"></path>
-                    </svg>
+            <!-- Card 1: Uttar Pradesh (Ram Mandir Custom SVG Design) -->
+            <div class="state-card featured-up">
+                <div class="card-top-ribbon saffron-ribbon">प्रमुख सांस्कृतिक धरोहर</div>
+                <div class="card-header-flex">
+                    <div class="icon-badge saffron-badge" title="श्री राम मंदिर वास्तुकला प्रतीक">
+                        <!-- श्री राम मंदिर शिखर का छोटा SVG डिज़ाइन -->
+                        <svg class="temple-svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <!-- ध्वज -->
+                            <path d="M32 4V14M32 5L42 8L32 11" stroke="#ea580c" stroke-width="2.5"/>
+                            <!-- मुख्य शिखर -->
+                            <path d="M22 28L32 14L42 28H22Z" fill="rgba(234, 88, 12, 0.15)"/>
+                            <!-- सहायक गुंबद -->
+                            <path d="M12 36L18 26L24 36H12Z"/>
+                            <path d="M40 36L46 26L52 36H40Z"/>
+                            <!-- मंदिर आधार व स्तंभ -->
+                            <rect x="10" y="36" width="44" height="14" rx="1"/>
+                            <path d="M27 50V41H37V50"/>
+                            <!-- सीढ़ियाँ -->
+                            <path d="M6 50H58M4 55H60"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="state-code">राज्य कोड: UP</span>
+                        <h2>उत्तर प्रदेश</h2>
+                    </div>
                 </div>
-                <h2>उत्तर प्रदेश (Uttar Pradesh)</h2>
-                <p class="tagline">"मर्यादा, अध्यात्म और ऐतिहासिक विरासत की भूमि"</p>
+                <p class="tagline">मर्यादा, अध्यात्म और ऐतिहासिक विरासत की भूमि</p>
                 <p class="description">
-                    अयोध्या का भव्य श्री राम मंदिर, काशी विश्वनाथ धाम, और ताजमहल यहाँ की समृद्ध सांस्कृतिक और वास्तुकला की अमर पहचान हैं। उत्तर प्रदेश परंपरा और आधुनिकता का अनूठा संगम है।
+                    अयोध्या का भव्य <strong>श्री राम जन्मभूमि मंदिर</strong>, काशी विश्वनाथ धाम, प्रयागराज संगम और आगरा का ताजमहल इस राज्य की विश्व प्रसिद्ध ऐतिहासिक व सांस्कृतिक पहचान हैं।
                 </p>
-                <div class="card-footer-info">
+                <div class="card-meta">
                     <span><i class="fa-solid fa-location-dot"></i> प्रमुख केंद्र: अयोध्या, वाराणसी, लखनऊ</span>
+                    <a href="#" class="details-link">विवरण देखें <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
 
             <!-- Card 2: Madhya Pradesh -->
             <div class="state-card">
-                <div class="card-icon-container">
-                    <i class="fa-solid fa-mountain-sun"></i>
+                <div class="card-top-ribbon navy-ribbon">भारत का हृदय प्रदेश</div>
+                <div class="card-header-flex">
+                    <div class="icon-badge navy-badge">
+                        <i class="fa-solid fa-gopuram"></i>
+                    </div>
+                    <div>
+                        <span class="state-code">राज्य कोड: MP</span>
+                        <h2>मध्य प्रदेश</h2>
+                    </div>
                 </div>
-                <h2>मध्य प्रदेश (Madhya Pradesh)</h2>
-                <p class="tagline">"भारत का हृदय प्रदेश"</p>
+                <p class="tagline">प्राचीन स्थापत्य कला और वन्यजीव धरोहर</p>
                 <p class="description">
-                    खजुराहो के प्राचीन मंदिर, सांची का स्तूप और बांधवगढ़ के जंगलों की प्राकृतिक सुंदरता इस राज्य को ऐतिहासिक और वन्यजीव पर्यटन का प्रमुख केंद्र बनाती है।
+                    विश्व धरोहर खजुराहो के मंदिर, सांची का महान स्तूप, उज्जैन का महाकालेश्वर लोक और भीमबेटका की गुफाएँ मध्य प्रदेश के गौरवशाली इतिहास को दर्शाती हैं।
                 </p>
-                <div class="card-footer-info">
+                <div class="card-meta">
                     <span><i class="fa-solid fa-location-dot"></i> प्रमुख केंद्र: खजुराहो, भोपाल, उज्जैन</span>
+                    <a href="#" class="details-link">विवरण देखें <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
 
             <!-- Card 3: Rajasthan -->
             <div class="state-card">
-                <div class="card-icon-container">
-                    <i class="fa-solid fa-chess-rook"></i>
+                <div class="card-top-ribbon green-ribbon">शौर्य एवं स्थापत्य</div>
+                <div class="card-header-flex">
+                    <div class="icon-badge green-badge">
+                        <i class="fa-solid fa-chess-rook"></i>
+                    </div>
+                    <div>
+                        <span class="state-code">राज्य कोड: RJ</span>
+                        <h2>राजस्थान</h2>
+                    </div>
                 </div>
-                <h2>राजस्थान (Rajasthan)</h2>
-                <p class="tagline">"वीर भूमि और महलों का राज्य"</p>
+                <p class="tagline">वीरता, दुर्गों और समृद्ध लोक कला का संगम</p>
                 <p class="description">
-                    शौर्य, त्याग और बलदान की धरती। यहाँ के भव्य किले, हवा महल, और रंग-बिरंगी संस्कृति पूरी दुनिया में भारत की शान बढ़ाते हैं।
+                    चित्तौड़गढ़ और कुंभलगढ़ के ऐतिहासिक दुर्ग, जयपुर का हवा महल और अरावली की वादियों में बसी संस्कृति राजस्थान को अद्वितीय पहचान देती है।
                 </p>
-                <div class="card-footer-info">
-                    <span><i class="fa-solid fa-location-dot"></i> प्रमुख केंद्र: जयपुर, उदयपुर, जोधपुर</span>
+                <div class="card-meta">
+                    <span><i class="fa-solid fa-location-dot"></i> प्रमुख केंद्र: जयपुर, उदयपुर, चित्तौड़गढ़</span>
+                    <a href="#" class="details-link">विवरण देखें <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
 
         </div>
     </main>
 
-    <!-- Footer -->
+    <!-- Official Govt Style Footer -->
     <footer class="footer">
-        <p>© 2026 भारत जन सूचना पोर्टल | सबका साथ, सबका विकास</p>
+        <div class="footer-content">
+            <p>© 2026 <strong>भारत जन सूचना पोर्टल</strong> | नागरिक सूचना एवं पारदर्शिता पहल</p>
+            <p class="footer-sub">इस पोर्टल की सामग्री जन-जागरूकता एवं सूचना प्रसार हेतु प्रकाशित की गई है।</p>
+        </div>
     </footer>
 
 </body>
 </html>
-
