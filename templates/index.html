@@ -5,9 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="भारत जन सूचना पोर्टल — सार्वजनिक जानकारी, सरकारी योजनाएँ और स्थानीय विकास की जानकारी एक जगह।">
   <title>भारत जन सूचना पोर्टल | Bharat Jan Suchna Portal</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <!-- Google Fonts for Clean Hindi & English Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <!-- Top Accessibility Strip -->
   <div class="top-strip">
     <div class="container top-inner">
       <span>भारत जन सूचना पोर्टल</span>
@@ -15,24 +21,28 @@
     </div>
   </div>
 
+  <!-- Masthead / Brand Header -->
   <header class="masthead">
     <div class="container brand-row">
-      <div class="emblem" aria-hidden="true">🇮🇳</div>
-      <div class="brand-copy">
-        <h1>भारत जन सूचना पोर्टल</h1>
-        <p>BHARAT JAN SUCHNA PORTAL</p>
-        <small>जनता के लिए सार्वजनिक जानकारी का एक मंच</small>
+      <div class="brand-left">
+        <div class="emblem" aria-hidden="true">🇮🇳</div>
+        <div class="brand-copy">
+          <h1>भारत जन सूचना पोर्टल</h1>
+          <p>BHARAT JAN SUCHNA PORTAL</p>
+          <small>जनता के लिए सार्वजनिक जानकारी का एक मंच</small>
+        </div>
       </div>
       <div class="header-actions">
         <button class="language-btn" id="languageBtn" type="button">English</button>
-        <a class="login-btn" href="#" aria-label="एडमिन लॉगिन">Admin Login</a>
+        <a class="login-btn" href="admin.html" aria-label="एडमिन लॉगिन">Admin Login</a>
       </div>
     </div>
   </header>
 
+  <!-- Main Navigation -->
   <nav class="main-nav">
     <div class="container nav-inner">
-      <a class="active" href="/">मुख्य पृष्ठ</a>
+      <a class="active" href="index.html">मुख्य पृष्ठ</a>
       <a href="#services">सेवाएँ</a>
       <a href="#explore">अपना क्षेत्र खोजें</a>
       <a href="#notices">सूचनाएँ</a>
@@ -42,86 +52,155 @@
   </nav>
 
   <main>
+    <!-- Hero Section -->
     <section class="hero">
       <div class="container hero-content">
         <div class="hero-label">एक राष्ट्र • एक सूचना मंच</div>
         <h2>अपने क्षेत्र की जानकारी<br><span>अब एक ही जगह</span></h2>
         <p>गाँव, ग्राम पंचायत, शहर, जिला, राज्य और केंद्र स्तर की सार्वजनिक जानकारी खोजें।</p>
         <form class="search-box" id="areaSearch">
-          <span aria-hidden="true">⌕</span>
-          <input id="searchInput" type="search" placeholder="गाँव, पंचायत, ब्लॉक, जिला या राज्य खोजें..." aria-label="क्षेत्र खोजें">
+          <span class="search-icon" aria-hidden="true">⌕</span>
+          <input id="searchInput" type="search" placeholder="गाँव, पंचायत, ब्लॉक, जिला या राज्य खोजें..." aria-label="क्षेत्र खोजें" required>
           <button type="submit">खोजें</button>
         </form>
         <div class="search-hint">उदाहरण: घत्रा, गौरिहार, छतरपुर, मध्य प्रदेश</div>
       </div>
     </section>
 
+    <!-- Portal Statistics Section -->
     <section class="container stats-section" aria-label="पोर्टल आँकड़े">
-      <div class="stat-card"><strong id="statesCount">36</strong><span>राज्य एवं केंद्र शासित प्रदेश</span></div>
-      <div class="stat-card"><strong id="districtsCount">—</strong><span>जिले</span></div>
-      <div class="stat-card"><strong id="villagesCount">—</strong><span>गाँव / स्थानीय निकाय</span></div>
-      <div class="stat-card"><strong id="noticesCount">0</strong><span>प्रकाशित सूचनाएँ</span></div>
+      <div class="stat-card">
+        <strong id="statesCount">36</strong>
+        <span>राज्य एवं केंद्र शासित प्रदेश</span>
+      </div>
+      <div class="stat-card">
+        <strong id="districtsCount">780+</strong>
+        <span>जिले</span>
+      </div>
+      <div class="stat-card">
+        <strong id="villagesCount">—</strong>
+        <span>गाँव / स्थानीय निकाय</span>
+      </div>
+      <div class="stat-card">
+        <strong id="noticesCount">0</strong>
+        <span>प्रकाशित सूचनाएँ</span>
+      </div>
     </section>
 
+    <!-- Core Services Section -->
     <section class="container content-section" id="services">
       <div class="section-heading">
-        <div><span class="eyebrow">PORTAL SERVICES</span><h2>मुख्य सेवाएँ</h2></div>
+        <div>
+          <span class="eyebrow">PORTAL SERVICES</span>
+          <h2>मुख्य सेवाएँ</h2>
+        </div>
         <p>सार्वजनिक रूप से उपलब्ध जानकारी तक आसान पहुँच।</p>
       </div>
       <div class="service-grid">
-        <a class="service-card" href="/village"><span class="service-icon blue">⌂</span><h3>गाँव एवं पंचायत</h3><p>ग्राम पंचायत, गाँव और स्थानीय निकाय की जानकारी।</p><b>जानकारी देखें →</b></a>
-        <a class="service-card" href="/schemes"><span class="service-icon green">▤</span><h3>सरकारी योजनाएँ</h3><p>योजनाओं की पात्रता, प्रक्रिया और आधिकारिक स्रोत।</p><b>योजनाएँ देखें →</b></a>
-        <a class="service-card" href="/budget"><span class="service-icon orange">₹</span><h3>बजट एवं विकास</h3><p>उपलब्ध बजट, परियोजनाएँ और विकास कार्य।</p><b>विवरण देखें →</b></a>
-        <a class="service-card" href="/notices"><span class="service-icon purple">▣</span><h3>सूचना एवं आदेश</h3><p>विभागीय नोटिस, आदेश और सार्वजनिक घोषणाएँ।</p><b>सूचनाएँ देखें →</b></a>
-        <a class="service-card" href="/complaints"><span class="service-icon red">✉</span><h3>जन शिकायत</h3><p>संबंधित आधिकारिक शिकायत व्यवस्था तक पहुँच।</p><b>विकल्प देखें →</b></a>
-        <a class="service-card" href="reports"><span class="service-icon teal">▥</span><h3>रिपोर्ट एवं आँकड़े</h3><p>स्रोत और तारीख सहित उपलब्ध सार्वजनिक आँकड़े।</p><b>रिपोर्ट देखें →</b></a>
+        <a class="service-card" href="village.html">
+          <span class="service-icon blue">⌂</span>
+          <h3>गाँव एवं पंचायत</h3>
+          <p>ग्राम पंचायत, गाँव और स्थानीय निकाय की जानकारी।</p>
+          <b>जानकारी देखें →</b>
+        </a>
+        <a class="service-card" href="schemes.html">
+          <span class="service-icon green">▤</span>
+          <h3>सरकारी योजनाएँ</h3>
+          <p>योजनाओं की पात्रता, प्रक्रिया और आधिकारिक स्रोत।</p>
+          <b>योजनाएँ देखें →</b>
+        </a>
+        <a class="service-card" href="budget.html">
+          <span class="service-icon orange">₹</span>
+          <h3>बजट एवं विकास</h3>
+          <p>उपलब्ध बजट, परियोजनाएँ और विकास कार्य।</p>
+          <b>विवरण देखें →</b>
+        </a>
+        <a class="service-card" href="notices.html">
+          <span class="service-icon purple">▣</span>
+          <h3>सूचना एवं आदेश</h3>
+          <p>विभागीय नोटिस, आदेश और सार्वजनिक घोषणाएँ।</p>
+          <b>सूचनाएँ देखें →</b>
+        </a>
+        <a class="service-card" href="complaints.html">
+          <span class="service-icon red">✉</span>
+          <h3>जन शिकायत</h3>
+          <p>संबंधित आधिकारिक शिकायत व्यवस्था तक पहुँच।</p>
+          <b>विकल्प देखें →</b>
+        </a>
+        <a class="service-card" href="reports.html">
+          <span class="service-icon teal">▥</span>
+          <h3>रिपोर्ट एवं आँकड़े</h3>
+          <p>स्रोत और तारीख सहित उपलब्ध सार्वजनिक आँकड़े।</p>
+          <b>रिपोर्ट देखें →</b>
+        </a>
       </div>
     </section>
 
+    <!-- Explore Your Area Section -->
     <section class="explore-section" id="explore">
       <div class="container explore-grid">
-        <div>
+        <div class="explore-copy">
           <span class="eyebrow">FIND YOUR AREA</span>
           <h2>अपना क्षेत्र चुनें</h2>
-          <p>राज्य से शुरुआत करके जिला और स्थानीय क्षेत्र तक पहुँचें।</p>
+          <p>राज्य से शुरुआत करके जिला और स्थानीय क्षेत्र तक पहुँचें। आप सीधे अपने गाँव या पंचायत का नाम भी दर्ज कर सकते हैं।</p>
         </div>
         <div class="select-panel">
           <label for="stateSelect">राज्य / केंद्र शासित प्रदेश</label>
-          <select id="stateSelect"><option value="">राज्य चुनें</option></select>
+          <select id="stateSelect">
+            <option value="">राज्य चुनें</option>
+          </select>
           <label for="districtInput">जिला या स्थान</label>
-          <input id="districtInput" type="text" placeholder="जिले / स्थान का नाम लिखें">
+          <input id="districtInput" type="text" placeholder="जिले / स्थान का नाम लिखें (जैसे: छतरपुर, घत्रा)">
           <button type="button" id="exploreBtn">क्षेत्र खोजें</button>
-          <small>क्षेत्रीय निर्देशिका चरणबद्ध रूप से जोड़ी जाएगी।</small>
+          <small>क्षेत्रीय निर्देशिका चरणबद्ध रूप से जोड़ी जा रही है।</small>
         </div>
       </div>
     </section>
 
+    <!-- Latest Public Notices Section -->
     <section class="container content-section notices-section" id="notices">
       <div class="section-heading">
-        <div><span class="eyebrow">LATEST UPDATES</span><h2>नवीनतम सार्वजनिक सूचनाएँ</h2></div>
+        <div>
+          <span class="eyebrow">LATEST UPDATES</span>
+          <h2>नवीनतम सार्वजनिक सूचनाएँ</h2>
+        </div>
         <span class="status-pill">सूचना केंद्र</span>
       </div>
       <div id="noticeList" class="notice-list">
-        <div class="empty-state">अभी कोई सूचना प्रकाशित नहीं है।</div>
+        <div class="empty-state">सूचनाएँ लोड हो रही हैं...</div>
       </div>
       <p class="disclaimer">सूचनाएँ संबंधित विभाग के आधिकारिक स्रोत से जाँचकर ही उपयोग करें।</p>
     </section>
 
+    <!-- About Band -->
     <section class="about-band" id="about">
       <div class="container about-inner">
-        <div><span class="eyebrow">ABOUT THE PORTAL</span><h2>जानकारी तक सरल पहुँच</h2></div>
+        <div>
+          <span class="eyebrow">ABOUT THE PORTAL</span>
+          <h2>जानकारी तक सरल पहुँच</h2>
+        </div>
         <p>भारत जन सूचना पोर्टल एक स्वतंत्र सार्वजनिक सूचना मंच है। यह भारत सरकार या किसी सरकारी विभाग की आधिकारिक वेबसाइट नहीं है। जहाँ उपलब्ध होगा, प्रत्येक जानकारी के साथ मूल स्रोत और अपडेट की तारीख दी जाएगी।</p>
       </div>
     </section>
   </main>
 
+  <!-- Footer -->
   <footer id="contact">
     <div class="container footer-inner">
-      <div><strong>भारत जन सूचना पोर्टल</strong><p>सार्वजनिक जानकारी • पारदर्शिता • नागरिक सुविधा</p></div>
-      <div class="footer-links"><a href="#about">अस्वीकरण</a><a href="#contact">संपर्क</a><a href="#services">सेवाएँ</a></div>
+      <div>
+        <strong>भारत जन सूचना पोर्टल</strong>
+        <p>सार्वजनिक जानकारी • पारदर्शिता • नागरिक सुविधा</p>
+      </div>
+      <div class="footer-links">
+        <a href="#about">अस्वीकरण</a>
+        <a href="#contact">संपर्क</a>
+        <a href="#services">सेवाएँ</a>
+      </div>
       <small>© <span id="year"></span> Bharat Jan Suchna Portal. स्वतंत्र सूचना मंच।</small>
     </div>
   </footer>
-  <script src="{{ url_for('static', filename='js/home.js') }}"></script>
+
+  <!-- Modular JS with Firebase Integration -->
+  <script type="module" src="js/home.js"></script>
 </body>
 </html>
