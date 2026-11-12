@@ -1,1 +1,101 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ग्राम एवं राज्य पहचान - भारत जन सूचना पोर्टल</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="dark-theme">
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="logo">
+            <i class="fa-solid fa-landmark"></i> <span>जन सूचना पोर्टल</span>
+        </div>
+        <nav class="nav-links">
+            <a href="/">होम</a>
+            <a href="/village" class="active">गाँव/राज्य</a>
+            <a href="/schemes">योजनाएं</a>
+            <a href="/budget">बजट</a>
+            <a href="/notices">नोटिस</a>
+            <a href="/complaints">शिकायत</a>
+            <a href="/reports">रिपोर्ट्स</a>
+        </nav>
+    </header>
+
+    <!-- Main Container -->
+    <main class="container">
+        <div class="page-header">
+            <h1><i class="fa-solid fa-map-location-dot"></i> राज्य एवं ऐतिहासिक पहचान</h1>
+            <p>भारत के विभिन्न राज्यों की सांस्कृतिक विरासत, धरोहर और ऐतिहासिक स्थलों की झलक</p>
+        </div>
+
+        <!-- States & Heritage Grid -->
+        <div class="cards-grid">
+
+            <!-- Card 1: Uttar Pradesh (Ram Mandir & Heritage Theme) -->
+            <div class="state-card featured-card">
+                <div class="card-badge">विशेष धरोहर</div>
+                <div class="card-icon-container ram-mandir-glow">
+                    <!-- राम मंदिर / वास्तुकला को दर्शाने वाला आइकॉन या छोटा SVG प्रतीक -->
+                    <svg class="custom-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6M12 3v4M10 10h4M10 13h4"></path>
+                    </svg>
+                </div>
+                <h2>उत्तर प्रदेश (Uttar Pradesh)</h2>
+                <p class="tagline">"मर्यादा, अध्यात्म और ऐतिहासिक विरासत की भूमि"</p>
+                <p class="description">
+                    अयोध्या का भव्य श्री राम मंदिर, काशी विश्वनाथ धाम, और ताजमहल यहाँ की समृद्ध सांस्कृतिक और वास्तुकला की अमर पहचान हैं। उत्तर प्रदेश परंपरा और आधुनिकता का अनूठा संगम है।
+                </p>
+                <div class="card-footer-info">
+                    <span><i class="fa-solid fa-location-dot"></i> प्रमुख केंद्र: अयोध्या, वाराणसी, लखनऊ</span>
+                </div>
+            </div>
+
+            <!-- Card 2: Madhya Pradesh -->
+            <div class="state-card">
+                <div class="card-icon-container">
+                    <i class="fa-solid fa-mountain-sun"></i>
+                </div>
+                <h2>मध्य प्रदेश (Madhya Pradesh)</h2>
+                <p class="tagline">"भारत का हृदय प्रदेश"</p>
+                <p class="description">
+                    खजुराहो के प्राचीन मंदिर, सांची का स्तूप और बांधवगढ़ के जंगलों की प्राकृतिक सुंदरता इस राज्य को ऐतिहासिक और वन्यजीव पर्यटन का प्रमुख केंद्र बनाती है।
+                </p>
+                <div class="card-footer-info">
+                    <span><i class="fa-solid fa-location-dot"></i> प्रमुख केंद्र: खजुराहो, भोपाल, उज्जैन</span>
+                </div>
+            </div>
+
+            <!-- Card 3: Rajasthan -->
+            <div class="state-card">
+                <div class="card-icon-container">
+                    <i class="fa-solid fa-chess-rook"></i>
+                </div>
+                <h2>राजस्थान (Rajasthan)</h2>
+                <p class="tagline">"वीर भूमि और महलों का राज्य"</p>
+                <p class="description">
+                    शौर्य, त्याग और बलदान की धरती। यहाँ के भव्य किले, हवा महल, और रंग-बिरंगी संस्कृति पूरी दुनिया में भारत की शान बढ़ाते हैं।
+                </p>
+                <div class="card-footer-info">
+                    <span><i class="fa-solid fa-location-dot"></i> प्रमुख केंद्र: जयपुर, उदयपुर, जोधपुर</span>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2026 भारत जन सूचना पोर्टल | सबका साथ, सबका विकास</p>
+    </footer>
+
+</body>
+</html>
 
