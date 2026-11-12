@@ -1,3 +1,4 @@
+import os
 from flask import Flask, render_template, jsonify
 from firebase import get_db, get_portal_stats, get_latest_notices
 
@@ -20,5 +21,5 @@ def health():
     return jsonify({"status": "ok", "message": "Bharat Jan Suchna Portal is running"})
 
 if __name__ == "__main__":
-    # Local development only. For public hosting, use a production WSGI server.
-    app.run(host="127.0.0.1", port=5000, debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port, debug=False)
